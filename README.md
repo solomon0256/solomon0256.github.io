@@ -10,6 +10,14 @@
 
 A GitHub Pages (Jekyll) template for personal academic website. Click [here](https://luost.me/academic-homepage/) to see the demo.
 
+## 🚀 Quick Start for Your Homepage
+
+**Your homepage is ready to deploy!** See [SETUP_GUIDE.md](SETUP_GUIDE.md) for complete instructions on:
+- Enabling GitHub Pages
+- Customizing your profile and content
+- Adding publications, news, and projects
+- Tips for Master's and PhD applications
+
 ## User Community
 
 [🏡](https://luost.me/)
