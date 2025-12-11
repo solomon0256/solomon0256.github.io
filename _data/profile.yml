@@ -5,7 +5,7 @@ navbar_name: "Yuhe Wen"
 positions:
 - name: UOU ISLab Research Assistant
 - name: University of Ulsan
-  logo: /assets/images/badges/university_of_ulsan.png # Logo is optional
+  logo: /assets/images/badges/university-ulsan-south-korea.jpg # Logo is optional
 
 email: "your@email.com"
 # cv_link: link-to-your-cv-file
@@ -28,13 +28,12 @@ short_bio: >-
     as well as being common in domestic longhair and domestic shorthair cats.
   </p>
 
-portrait_url: /assets/images/photos/portrait.jpg
-portrait_caption: >-
-  Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
+portrait_url: /assets/images/photos/证件照.jpg
+portrait_caption: ""
 
 education:
 - name: Ludong University, China
-  logo: /assets/images/badges/ludong_university.png
+  logo: /assets/images/badges/Ludonguni.webp
   logo_bg: "#ffffff"
   url: https://www.ldu.edu.cn/
   major: Electrical Engineering and Automation
@@ -42,7 +41,7 @@ education:
   gpa: "3.4 / 5.0 (Top 10%)"
   date: Sep. 2022 - Sep. 2026
 - name: University of Ulsan, South Korea
-  logo: /assets/images/badges/university_of_ulsan.png
+  logo: /assets/images/badges/university-ulsan-south-korea.jpg
   logo_bg: "#1a1a2e"
   url: https://www.ulsan.ac.kr/
   major: Electrical Engineering and Electronics
