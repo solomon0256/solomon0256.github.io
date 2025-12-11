@@ -1,18 +1,17 @@
-primary_name: "Your Name"
+primary_name: "Yuhe Wen"
 secondary_name: ""
-navbar_name: "Your Name"
+navbar_name: "Yuhe Wen"
 
 positions:
-- name: Title or Position
-- name: Affiliation Name
-  logo: /assets/images/badges/MIT_Social_circle.png  # Logo is optional
-
+- name: UOU ISLab Research Assistant
+- name: University of Ulsan
+  logo: /assets/images/badges/university_of_ulsan.png # Logo is optional
 
 email: "your@email.com"
 # cv_link: link-to-your-cv-file
-gscholar: xFmQpf4AAAAJ  # This is an example, replace it with your own Google Scholar ID
+gscholar: xFmQpf4AAAAJ # This is an example, replace it with your own Google Scholar ID
 github: your_github_id
-twitter: your_twitter_id  # Do not include the '@' symbol
+twitter: your_twitter_id # Do not include the '@' symbol
 # wechat_qrcode: /assets/images/etc/wechat.jpg
 # wechat_prompt: >-
 #   Please tell me your <strong>name</strong> and <strong>affiliation</strong> (current or past) when adding my wechat. Thanks!
@@ -23,8 +22,7 @@ short_bio_text_justify: false
 short_bio: >-
   <p>
     A <a href="https://en.wikipedia.org/wiki/Bicolor_cat" target="_blank">bicolor cat</a> is a cat with white fur combined with fur of some other colour, for example solid black, tabby, or colourpointed.
-  </p>
-  <p>
+  </p> <p>
     There are various patterns of a bicolour cat. These range from the Van-patterned (colour on the crown of the head 
     and the tail only) to a solid colour with a throat locket or medallion. Bicolour coats are found in many cat breeds, 
     as well as being common in domestic longhair and domestic shorthair cats.
@@ -35,16 +33,22 @@ portrait_caption: >-
   Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
 
 education:
-- name: Massachusetts Institute of Technology
-  logo: /assets/images/badges/MIT_Social_circle.png
-  position: >- 
-    Department of Electrical Engineering and Computer Science <br/>
-    Ph.D. Student
-  date: Sep. 2024 - present
-- name: Peking University
-  logo: /assets/images/badges/PKU_red.png
-  position: B.S. in Computer Science
-  date: Sep. 2019 - Jul. 2021
+- name: Ludong University, China
+  logo: /assets/images/badges/ludong_university.png
+  logo_bg: "#ffffff"
+  url: https://www.ldu.edu.cn/
+  major: Electrical Engineering and Automation
+  degree: Engineering Bachelor's Degree
+  gpa: "3.4 / 5.0 (Top 10%)"
+  date: Sep. 2022 - Sep. 2026
+- name: University of Ulsan, South Korea
+  logo: /assets/images/badges/university_of_ulsan.png
+  logo_bg: "#1a1a2e"
+  url: https://www.ulsan.ac.kr/
+  major: Electrical Engineering and Electronics
+  degree: Engineering Bachelor's Degree
+  gpa: "3.5 / 4.5"
+  date: Feb. 2025 - Feb. 2027
 
 # experience:
 # - name: Peking University
@@ -55,7 +59,7 @@ education:
 awards:
 - name: Award Name 2
   date: 2024
-- name: Award Name 1 
+- name: Award Name 1
   date: 2021
 - name: A quick brown fox jumps over the lazy dog and runs away award
   date: 2021
