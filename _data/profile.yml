@@ -3,29 +3,30 @@ secondary_name: ""
 navbar_name: "Yuhe Wen"
 
 positions:
-- name: UOU ISLab Research Assistant
-- name: University of Ulsan
-  logo: /assets/images/badges/university-ulsan-south-korea.jpg # Logo is optional
+- name: Undergraduate Student
+- name: UOU Electrical & Electronic Engineering
+  logo: /assets/images/badges/university-ulsan-south-korea.jpg
 
-email: "your@email.com"
+email: "wenyuhe03@gmail.com"
 # cv_link: link-to-your-cv-file
-gscholar: xFmQpf4AAAAJ # This is an example, replace it with your own Google Scholar ID
-github: your_github_id
-twitter: your_twitter_id # Do not include the '@' symbol
+# gscholar: your_google_scholar_id
+github: solomon0256
+# twitter: your_twitter_id
 # wechat_qrcode: /assets/images/etc/wechat.jpg
 # wechat_prompt: >-
 #   Please tell me your <strong>name</strong> and <strong>affiliation</strong> (current or past) when adding my wechat. Thanks!
-# linkedin: your-linked-in-id
+linkedin: "%E5%AE%87%E5%92%8C-%E6%B8%A9-b6789432b"
 # orcid: 0000-0000-0000-0000
 
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    A <a href="https://en.wikipedia.org/wiki/Bicolor_cat" target="_blank">bicolor cat</a> is a cat with white fur combined with fur of some other colour, for example solid black, tabby, or colourpointed.
+    Undergraduate student in Electrical & Electronic Engineering at University of Ulsan, South Korea. 
+    Interested in Embedded System, Power Electronics, UAV, and AI.
   </p> <p>
-    There are various patterns of a bicolour cat. These range from the Van-patterned (colour on the crown of the head 
-    and the tail only) to a solid colour with a throat locket or medallion. Bicolour coats are found in many cat breeds, 
-    as well as being common in domestic longhair and domestic shorthair cats.
+    <strong>Contact:</strong><br/>
+    📍 Dept. of Electrical Eng, University of Ulsan, 93 Daehak-ro, Nam-gu, Ulsan (44610), Korea<br/>
+    📱 +82-010-8389-8527 / +86-13280857918
   </p>
 
 portrait_url: /assets/images/photos/证件照.jpg
