@@ -61,21 +61,28 @@ recent_work:
     items:
     - title: "3D Object Detection Pipeline"
       description: "Building 3D detection models using laboratory database"
+      date: "Aug. 16 - Dec. 12, 2024"
     - title: "Model Optimization"
       description: "Fine-tuning and optimizing detection models for improved performance"
+      date: "Dec. 6, 2024 - Present"
     - title: "4D Radar Adaptation"
       description: "Adapting perception algorithms for 4D radar sensor data"
+      date: "Nov. 7 - Dec. 19, 2024"
     - title: "Custom Dataset Creation"
       description: "Collecting and annotating custom datasets for training"
+      date: "Nov. 7, 2024 - Present"
     - title: "ROS & RViz Visualization"
       description: "Real-time visualization of detection results in ROS RViz"
+      date: "Aug. 16 - Dec. 12, 2024"
   personal:
     title: "Personal Projects"
     items:
     - title: "Model Lightweight Optimization"
       description: "Neural network compression and acceleration techniques"
+      date: "Nov. 2024 - Present"
     - title: "Feedforward 3D Reconstruction"
       description: "Efficient 3D scene reconstruction from single/multi-view images"
+      date: "Nov. 2024 - Present"
 
 skills:
 - category: "Programming"

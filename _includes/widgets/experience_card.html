@@ -47,12 +47,13 @@
                     </h6>
                     <div class="row">
                         {% for item in site.data.profile.recent_work.islab.items %}
-                        <div class="col-md-6 mb-2">
+                        <div class="col-md-6 mb-3">
                             <div class="d-flex align-items-start">
                                 <i class="fas fa-circle mr-2 mt-2" style="color: #5dade2; font-size: 6px;"></i>
                                 <div>
                                     <div style="font-weight: 600;">{{ item.title }}</div>
                                     <div class="small text-muted">{{ item.description }}</div>
+                                    {% if item.date %}<div class="small" style="color: #6c757d;"><em>{{ item.date }}</em></div>{% endif %}
                                 </div>
                             </div>
                         </div>
@@ -69,12 +70,13 @@
                     </h6>
                     <div class="row">
                         {% for item in site.data.profile.recent_work.personal.items %}
-                        <div class="col-md-6 mb-2">
+                        <div class="col-md-6 mb-3">
                             <div class="d-flex align-items-start">
                                 <i class="fas fa-circle mr-2 mt-2" style="color: #28a745; font-size: 6px;"></i>
                                 <div>
                                     <div style="font-weight: 600;">{{ item.title }}</div>
                                     <div class="small text-muted">{{ item.description }}</div>
+                                    {% if item.date %}<div class="small" style="color: #6c757d;"><em>{{ item.date }}</em></div>{% endif %}
                                 </div>
                             </div>
                         </div>
