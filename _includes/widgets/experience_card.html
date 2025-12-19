@@ -51,7 +51,9 @@
                             <div class="d-flex align-items-start">
                                 <i class="fas fa-circle mr-2 mt-2" style="color: #5dade2; font-size: 6px;"></i>
                                 <div>
-                                    <div style="font-weight: 600;">{{ item.title }}</div>
+                                    <div style="font-weight: 600;">
+                                        {% if item.link %}<a href="{{ item.link }}" style="color: inherit; text-decoration: none;">{{ item.title }} <i class="fas fa-external-link-alt" style="font-size: 10px; color: #5dade2;"></i></a>{% else %}{{ item.title }}{% endif %}
+                                    </div>
                                     <div class="small text-muted">{{ item.description }}</div>
                                     {% if item.date %}<div class="small" style="color: #6c757d;"><em>{{ item.date }}</em></div>{% endif %}
                                 </div>
@@ -74,7 +76,9 @@
                             <div class="d-flex align-items-start">
                                 <i class="fas fa-circle mr-2 mt-2" style="color: #28a745; font-size: 6px;"></i>
                                 <div>
-                                    <div style="font-weight: 600;">{{ item.title }}</div>
+                                    <div style="font-weight: 600;">
+                                        {% if item.link %}<a href="{{ item.link }}" style="color: inherit; text-decoration: none;">{{ item.title }} <i class="fas fa-external-link-alt" style="font-size: 10px; color: #28a745;"></i></a>{% else %}{{ item.title }}{% endif %}
+                                    </div>
                                     <div class="small text-muted">{{ item.description }}</div>
                                     {% if item.date %}<div class="small" style="color: #6c757d;"><em>{{ item.date }}</em></div>{% endif %}
                                 </div>
