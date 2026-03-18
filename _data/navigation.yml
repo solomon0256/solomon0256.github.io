@@ -9,3 +9,5 @@ pages:
   url: /publications
 - name: Showcase
   url: /showcase
+- name: Archive
+  url: /archive

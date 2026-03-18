@@ -39,4 +39,25 @@ $(function () {
     $(".lazy").on("load", function () {
         $grid.masonry('layout');
     });
+
+    // ===== Theme Toggle =====
+    var savedTheme = localStorage.getItem('theme') || 'dark';
+    applyTheme(savedTheme);
+
+    $('#theme-toggle').on('click', function() {
+        var current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+        var next = current === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+        localStorage.setItem('theme', next);
+    });
+
+    function applyTheme(theme) {
+        if (theme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            $('#theme-icon').removeClass('fa-sun').addClass('fa-moon');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+            $('#theme-icon').removeClass('fa-moon').addClass('fa-sun');
+        }
+    }
 })

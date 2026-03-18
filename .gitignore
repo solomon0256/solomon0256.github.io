@@ -8,3 +8,7 @@ vendor/
 Gemfile.lock
 
 .DS_Store
+
+# PPT source files (too large for git)
+_archive/PPT/*.pptx
+_archive/PPT/*.ppt
