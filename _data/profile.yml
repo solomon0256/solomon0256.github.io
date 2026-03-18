@@ -58,48 +58,74 @@ education:
 
 recent_work:
   items:
-  - title: "Research log started"
-    description: "Began systematically recording research progress at ISLab, University of Ulsan."
-    date: "Aug. 2025"
-    sort_date: 2025-08-01
+  - title: "Recent Work Started"
+    description: ""
+    date: "Sep. 2025"
+    sort_date: 2025-09-01
     project: ""
 
 projects:
-- title: "DE-FastPoly: Doppler-Enhanced 3D Multi-Object Tracking"
-  description: "Proposed Doppler velocity initialization (C) and Doppler-aware association (D) for 4D radar MOT. MOTA +3.9% on VoD, IDS -8.5% on nuScenes. Submitted to ISIE 2026."
-  date: "Jan. 2026 - Mar. 2026"
-  sort_date: 2026-01-01
-  status: "Submitted"
-  tags: ["4D Radar", "MOT", "Doppler", "Kalman Filter", "ISIE 2026"]
-  link: "/archive/de-fastpoly"
-- title: "HDX: 4D Radar Perception for Construction Sites"
-  description: "Developed LiDAR 3D detection, radar ground mapping, velocity/distance analysis, and GUI visualization system for HDX excavator monitoring platform."
+# ── Top-level projects ──────────────────────────────────────
+- id: "hdx"
+  title: "HDX: 4D Radar Perception for Construction Sites"
+  description: "LiDAR 3D detection, radar ground mapping, velocity/distance analysis, and GUI visualization system for HDX excavator monitoring platform."
   date: "Sep. 2025 - Present"
   sort_date: 2025-09-01
   status: "In Progress"
   tags: ["4D Radar", "LiDAR", "3D Detection", "GUI", "ROS2"]
   link: "/archive/hdx"
-- title: "Xpanner: Off-Road Perception & Mapping"
-  description: "Built LiDAR SLAM pipeline, ground segmentation (×2.0 speedup), pothole/hole detection with depth camera, and 3D mapping for Xpanner excavation vehicle."
+  parent: ""
+
+- id: "xpanner"
+  title: "Xpanner: Off-Road Perception & Mapping"
+  description: "LiDAR SLAM pipeline, ground segmentation (×2.0 speedup), pothole/hole detection with depth camera, and 3D mapping for Xpanner excavation vehicle."
   date: "Sep. 2025 - Present"
   sort_date: 2025-09-03
   status: "In Progress"
   tags: ["SLAM", "Patchwork++", "YOLOv8", "RealSense", "Docker"]
   link: "/archive/xpanner"
-- title: "DUSt3R Lightweighting"
+  parent: ""
+
+- id: "dust3r"
+  title: "DUSt3R Lightweighting"
   description: "Lightweight adaptation of DUSt3R feedforward 3D reconstruction model via knowledge distillation and model compression techniques."
   date: "Nov. 2024 - Present"
   sort_date: 2024-11-01
   status: "In Progress"
-  tags: ["3D Reconstruction", "Knowledge Distillation", "Model Compression", "DUSt3R"]
+  tags: ["3D Reconstruction", "Knowledge Distillation", "Model Compression"]
   link: "/archive/dust3r-lightweight"
-- title: "Capstone Design"
+  parent: ""
+
+- id: "capstone"
+  title: "Capstone Design"
   description: "Bachelor's thesis project. Details to be updated."
   date: "2025 - 2026"
   sort_date: 2025-09-01
   status: "In Progress"
   tags: []
   link: "/archive/capstone"
+  parent: ""
+
+# ── Sub-projects ─────────────────────────────────────────────
+- id: "de-fastpoly"
+  title: "DE-FastPoly: Doppler-Enhanced 3D MOT"
+  description: "Doppler velocity initialization + Doppler-aware association for 4D radar tracking. MOTA +3.9% on VoD, IDS -8.5% on nuScenes. Submitted to ISIE 2026."
+  date: "Jan. 2026 - Mar. 2026"
+  sort_date: 2026-01-01
+  status: "Submitted"
+  tags: ["4D Radar", "MOT", "Doppler", "Kalman Filter", "ISIE 2026"]
+  link: "/archive/de-fastpoly"
+  parent: "xpanner"
+
+- id: "hdx-cluster"
+  title: "Cluster Detection"
+  description: "Radar point cloud clustering for 3D object detection in construction site environments."
+  date: "Sep. 2025 - Present"
+  sort_date: 2025-09-01
+  status: "In Progress"
+  tags: ["Clustering", "4D Radar", "Point Cloud"]
+  link: "/archive/hdx-cluster"
+  parent: "hdx"
 
 skills:
 - category: "Programming"
