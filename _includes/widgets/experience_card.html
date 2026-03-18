@@ -38,58 +38,28 @@
         <div class="card border-0 shadow-sm bg-white">
             <div class="card-body p-4">
                 <h5 class="mb-3"><strong>Recent Work</strong></h5>
-                
-                <!-- 可滚动区域 -->
-                <div style="max-height: 400px; overflow-y: auto; padding-right: 10px;">
-                    <!-- ISLab Research -->
-                    {% if site.data.profile.recent_work.islab %}
-                    <div class="mb-4">
-                        <h6 class="mb-3" style="color: #5dade2;">
-                            <i class="fas fa-microscope mr-2"></i>{{ site.data.profile.recent_work.islab.title }}
-                        </h6>
-                        {% assign islab_items = site.data.profile.recent_work.islab.items | sort: "sort_date" | reverse %}
-                        {% for item in islab_items %}
-                        <div class="mb-3">
-                            <div class="d-flex align-items-start">
-                                <i class="fas fa-circle mr-2 mt-2" style="color: #5dade2; font-size: 6px;"></i>
-                                <div style="flex: 1;">
-                                    <div style="font-weight: 600;">
-                                        {% if item.link %}<a href="{{ item.link }}" style="color: #5dade2; text-decoration: none; border-bottom: 1px dashed #5dade2;">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}
-                                    </div>
-                                    <div class="small text-muted">{{ item.description }}</div>
-                                    {% if item.date %}<div class="small" style="color: #6c757d;"><em>{{ item.date }}</em></div>{% endif %}
+                <div style="max-height: 400px; overflow-y: auto; padding-right: 8px;">
+                    {% assign rw_items = site.data.profile.recent_work.items | sort: "sort_date" | reverse %}
+                    {% for item in rw_items %}
+                    <div class="mb-3 d-flex align-items-start">
+                        <i class="fas fa-circle mr-2" style="color: #5dade2; font-size: 6px; margin-top: 6px; flex-shrink: 0;"></i>
+                        <div style="flex: 1;">
+                            <div class="d-flex align-items-start justify-content-between">
+                                <div style="font-weight: 600; font-size: 0.9rem;">
+                                    {% if item.link %}<a href="{{ item.link }}" style="color: #5dade2; text-decoration: none;">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}
                                 </div>
+                                <div class="ml-2 small text-muted no-break"><em>{{ item.date }}</em></div>
                             </div>
+                            <div class="small text-muted mt-1">{{ item.description }}</div>
+                            {% if item.project and item.project != "" %}
+                            <span class="badge mt-1" style="font-size: 0.68rem; background: rgba(93,173,226,0.15); color: #5dade2; border: 1px solid rgba(93,173,226,0.3);">
+                                <i class="fas fa-tag mr-1"></i>{{ item.project }}
+                            </span>
+                            {% endif %}
                         </div>
-                        {% endfor %}
                     </div>
-                    {% endif %}
-
-                    <!-- Personal Projects -->
-                    {% if site.data.profile.recent_work.personal %}
-                    <div>
-                        <h6 class="mb-3" style="color: #28a745;">
-                            <i class="fas fa-laptop-code mr-2"></i>{{ site.data.profile.recent_work.personal.title }}
-                        </h6>
-                        {% assign personal_items = site.data.profile.recent_work.personal.items | sort: "sort_date" | reverse %}
-                        {% for item in personal_items %}
-                        <div class="mb-3">
-                            <div class="d-flex align-items-start">
-                                <i class="fas fa-circle mr-2 mt-2" style="color: #28a745; font-size: 6px;"></i>
-                                <div style="flex: 1;">
-                                    <div style="font-weight: 600;">
-                                        {% if item.link %}<a href="{{ item.link }}" style="color: #28a745; text-decoration: none; border-bottom: 1px dashed #28a745;">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}
-                                    </div>
-                                    <div class="small text-muted">{{ item.description }}</div>
-                                    {% if item.date %}<div class="small" style="color: #6c757d;"><em>{{ item.date }}</em></div>{% endif %}
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
+                    {% endfor %}
                 </div>
-
             </div>
         </div>
     </div>
