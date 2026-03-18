@@ -8,6 +8,7 @@ positions:
   logo: /assets/images/badges/university-ulsan-south-korea.jpg
 
 email: "wenyuhe03@gmail.com"
+email2: "wenyuhe@mail.ulsan.ac.kr"
 # cv_link: link-to-your-cv-file
 # gscholar: your_google_scholar_id
 github: solomon0256
@@ -99,41 +100,34 @@ recent_work:
       link: "/archive/3d-reconstruction"
 
 projects:
-- title: "DE-FastPoly: Doppler-Enhanced 3D Multi-Object Tracking"
-  description: "Proposed Doppler velocity initialization and Doppler-aware association for 4D radar tracking. MOTA +3.9% on VoD dataset. Submitted to ISIE 2026."
-  date: "Jan. 2026 - Mar. 2026"
-  sort_date: 2026-01-01
-  status: "Submitted"
-  tags: ["4D Radar", "MOT", "Kalman Filter", "Doppler"]
-  link: "/archive/de-fastpoly"
-- title: "LiDAR SLAM Pipeline Optimization"
-  description: "Optimized full LiDAR SLAM pipeline with Patchwork++ ground segmentation. Achieved ×2.0 speedup on Xpanner platform. Containerized with Docker for reproducibility."
-  date: "Nov. 2025 - Present"
-  sort_date: 2025-11-01
+- title: "HDX: 4D Radar Perception for Construction Sites"
+  description: "Developed LiDAR 3D detection, radar ground mapping, velocity/distance analysis, and GUI visualization system for HDX excavator monitoring platform."
+  date: "Sep. 2025 - Present"
+  sort_date: 2025-09-01
   status: "In Progress"
-  tags: ["LiDAR", "SLAM", "Patchwork++", "ROS2", "Docker"]
-  link: "/archive/lidar-slam-pipeline"
-- title: "4D Radar Perception System (Construction Site)"
-  description: "Built radar-centric 3D detection pipeline using SGDet3R with full ROS2 integration and RViz visualization for construction site object detection."
-  date: "Nov. 2025 - Present"
-  sort_date: 2025-11-01
+  tags: ["4D Radar", "LiDAR", "3D Detection", "GUI", "ROS2"]
+  link: "/archive/hdx"
+- title: "Xpanner: Off-Road Perception & Mapping"
+  description: "Built LiDAR SLAM pipeline, ground segmentation (×2.0 speedup), pothole/hole detection with depth camera, and 3D mapping for Xpanner excavation vehicle."
+  date: "Sep. 2025 - Present"
+  sort_date: 2025-09-03
   status: "In Progress"
-  tags: ["4D Radar", "SGDet3R", "ROS2", "3D Detection"]
-  link: "/archive/4d-radar-perception"
-- title: "Radar Velocity & Distance Analysis"
-  description: "Analyzed HDX 4D radar Doppler velocity and radial distance data to recover true object motion parameters. Validated on pedestrians and excavators."
-  date: "Jan. 2026"
-  sort_date: 2026-01-06
-  status: "Completed"
-  tags: ["4D Radar", "Doppler", "Signal Processing", "Motion Estimation"]
-  link: "/archive/radar-analysis"
-- title: "Pothole Detection with Depth Camera"
-  description: "Investigated pothole segmentation using Intel RealSense D435 with YOLOv8 and BiSeNet. Addressed domain gap between asphalt and excavation site holes."
-  date: "Sep. 2025"
-  sort_date: 2025-09-09
-  status: "Completed"
-  tags: ["Segmentation", "YOLOv8", "RealSense", "Depth Camera"]
-  link: "/archive/pothole-detection"
+  tags: ["SLAM", "Patchwork++", "YOLOv8", "RealSense", "Docker"]
+  link: "/archive/xpanner"
+- title: "DUSt3R Lightweighting"
+  description: "Lightweight adaptation of DUSt3R feedforward 3D reconstruction model via knowledge distillation and model compression techniques."
+  date: "Nov. 2024 - Present"
+  sort_date: 2024-11-01
+  status: "In Progress"
+  tags: ["3D Reconstruction", "Knowledge Distillation", "Model Compression", "DUSt3R"]
+  link: "/archive/dust3r-lightweight"
+- title: "Capstone Design"
+  description: "Bachelor's thesis project. Details to be updated."
+  date: "2025 - 2026"
+  sort_date: 2025-09-01
+  status: "In Progress"
+  tags: []
+  link: "/archive/capstone"
 
 skills:
 - category: "Programming"
