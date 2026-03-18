@@ -73,10 +73,9 @@
             <div class="card-body p-4">
                 <h5 class="mb-3"><strong>Projects</strong></h5>
                 <div style="max-height: 450px; overflow-y: auto; padding-right: 8px;">
-                    {% assign top_projects = site.data.profile.projects | where: "parent", "" | sort: "sort_date" | reverse %}
-                    {% for item in top_projects %}
-                    <!-- Top-level project -->
-                    <div class="mb-2 p-3" style="border-left: 3px solid #5dade2; background: rgba(93,173,226,0.05); border-radius: 0 8px 8px 0;">
+                    {% assign sorted_projects = site.data.profile.projects | sort: "sort_date" | reverse %}
+                    {% for item in sorted_projects %}
+                    <div class="mb-3 p-3" style="border-left: 3px solid #5dade2; background: rgba(93,173,226,0.05); border-radius: 0 8px 8px 0;">
                         <div class="d-flex align-items-start justify-content-between">
                             <div style="flex: 1;">
                                 <div style="font-weight: 700; font-size: 0.95rem;">
@@ -85,6 +84,10 @@
                                 <div class="small mt-1 text-muted">{{ item.description }}</div>
                                 <div class="mt-1">
                                     {% for tag in item.tags %}<span class="badge mr-1" style="font-size: 0.65rem; background: rgba(93,173,226,0.15); color: #5dade2;">{{ tag }}</span>{% endfor %}
+                                    {% if item.parent and item.parent != "" %}
+                                    {% assign parent_proj = site.data.profile.projects | where: "id", item.parent | first %}
+                                    {% if parent_proj %}<span class="badge ml-1" style="font-size: 0.65rem; background: rgba(255,193,7,0.15); color: #ffc107; border: 1px solid rgba(255,193,7,0.3);"><i class="fas fa-sitemap mr-1"></i>{{ parent_proj.title | split: ":" | first }}</span>{% endif %}
+                                    {% endif %}
                                 </div>
                             </div>
                             <div class="ml-3 text-right" style="flex-shrink: 0;">
@@ -92,28 +95,6 @@
                                 {% if item.status %}<span class="badge mt-1 badge-{% if item.status == 'Completed' %}success{% elsif item.status == 'Submitted' %}warning{% else %}primary{% endif %}" style="font-size: 0.65rem;">{{ item.status }}</span>{% endif %}
                             </div>
                         </div>
-                        <!-- Sub-projects -->
-                        {% assign subs = site.data.profile.projects | where: "parent", item.id %}
-                        {% if subs.size > 0 %}
-                        <div class="mt-2" style="border-left: 2px solid rgba(93,173,226,0.3); margin-left: 8px; padding-left: 10px;">
-                            {% for sub in subs %}
-                            <div class="d-flex align-items-start justify-content-between py-1">
-                                <div style="flex: 1;">
-                                    <div style="font-size: 0.85rem; font-weight: 600;">
-                                        <i class="fas fa-code-branch mr-1" style="color: #5dade2; font-size: 0.7rem;"></i>
-                                        {% if sub.link %}<a href="{{ sub.link }}" style="color: #5dade2; text-decoration: none;">{{ sub.title }}</a>{% else %}{{ sub.title }}{% endif %}
-                                    </div>
-                                    <div class="small text-muted">{{ sub.description }}</div>
-                                    <div>{% for tag in sub.tags %}<span class="badge mr-1" style="font-size: 0.6rem; background: rgba(93,173,226,0.1); color: #5dade2;">{{ tag }}</span>{% endfor %}</div>
-                                </div>
-                                <div class="ml-2 text-right" style="flex-shrink: 0;">
-                                    <div class="small text-muted">{{ sub.date }}</div>
-                                    {% if sub.status %}<span class="badge badge-{% if sub.status == 'Completed' %}success{% elsif sub.status == 'Submitted' %}warning{% else %}primary{% endif %}" style="font-size: 0.6rem;">{{ sub.status }}</span>{% endif %}
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
-                        {% endif %}
                     </div>
                     {% endfor %}
                 </div>
