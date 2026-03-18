@@ -186,7 +186,7 @@ div.lazy {
     background-color: var(--bg-primary) !important;
 }
 .bg-white {
-    background-color: var(--bg-secondary) !important;
+    background-color: var(--bg-card) !important;
 }
 .bg-dark {
     background-color: var(--navbar-bg) !important;
@@ -194,11 +194,51 @@ div.lazy {
 .text-muted {
     color: var(--text-muted) !important;
 }
+.text-dark {
+    color: var(--text-primary) !important;
+}
 .border-top {
     border-top-color: var(--border-color) !important;
+}
+.border, .border-top, .border-bottom, .border-left, .border-right {
+    border-color: var(--border-color) !important;
 }
 .list-group-item {
     background-color: var(--bg-card);
     border-color: var(--border-color);
     color: var(--text-primary);
 }
+
+/* Modal dark mode */
+.modal-content {
+    background-color: var(--bg-card) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+.modal-header {
+    border-bottom-color: var(--border-color) !important;
+}
+.modal-footer {
+    border-top-color: var(--border-color) !important;
+}
+
+/* Form controls */
+.form-control {
+    background-color: var(--bg-secondary) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Tables */
+.table {
+    color: var(--text-primary) !important;
+}
+.table td, .table th {
+    border-color: var(--border-color) !important;
+}
+
+/* Scrollbar dark */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }

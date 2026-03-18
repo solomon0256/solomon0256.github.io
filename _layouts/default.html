@@ -19,7 +19,13 @@
     <script>
         (function() {
             var theme = localStorage.getItem('theme') || 'dark';
-            if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+            // Always force dark bg color on html element immediately
+            if (theme !== 'light') {
+                document.documentElement.style.backgroundColor = '#1a1a2e';
+            }
         })();
     </script>
 </head>

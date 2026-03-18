@@ -41,23 +41,25 @@ $(function () {
     });
 
     // ===== Theme Toggle =====
+    function applyTheme(theme) {
+        if (theme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            document.body.setAttribute('data-theme', 'light');
+            $('#theme-icon').removeClass('fa-sun').addClass('fa-moon');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+            document.body.removeAttribute('data-theme');
+            $('#theme-icon').removeClass('fa-moon').addClass('fa-sun');
+        }
+    }
+
     var savedTheme = localStorage.getItem('theme') || 'dark';
     applyTheme(savedTheme);
 
     $('#theme-toggle').on('click', function() {
-        var current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+        var current = localStorage.getItem('theme') || 'dark';
         var next = current === 'dark' ? 'light' : 'dark';
         applyTheme(next);
         localStorage.setItem('theme', next);
     });
-
-    function applyTheme(theme) {
-        if (theme === 'light') {
-            document.documentElement.setAttribute('data-theme', 'light');
-            $('#theme-icon').removeClass('fa-sun').addClass('fa-moon');
-        } else {
-            document.documentElement.removeAttribute('data-theme');
-            $('#theme-icon').removeClass('fa-moon').addClass('fa-sun');
-        }
-    }
 })
