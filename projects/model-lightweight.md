@@ -3,7 +3,7 @@ layout: project
 title: "Model Lightweight Optimization"
 date_range: "Nov. 2024 - Present"
 status: "In Progress"
-permalink: /projects/model-lightweight
+permalink: /archive/model-lightweight
 ---
 
 <div class="row">

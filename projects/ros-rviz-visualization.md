@@ -3,7 +3,7 @@ layout: project
 title: "ROS & RViz Visualization"
 date_range: "Aug. 16 - Dec. 12, 2024"
 status: "Completed"
-permalink: /projects/ros-rviz-visualization
+permalink: /archive/ros-rviz-visualization
 ---
 
 <div class="row">

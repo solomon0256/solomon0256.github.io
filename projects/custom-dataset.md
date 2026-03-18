@@ -3,7 +3,7 @@ layout: project
 title: "Custom Dataset Creation"
 date_range: "Nov. 7, 2024 - Present"
 status: "In Progress"
-permalink: /projects/custom-dataset
+permalink: /archive/custom-dataset
 ---
 
 <div class="row">

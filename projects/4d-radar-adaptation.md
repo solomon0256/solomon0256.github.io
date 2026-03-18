@@ -3,7 +3,7 @@ layout: project
 title: "4D Radar Adaptation"
 date_range: "Nov. 7 - Dec. 19, 2024"
 status: "Completed"
-permalink: /projects/4d-radar-adaptation
+permalink: /archive/4d-radar-adaptation
 ---
 
 <div class="row">

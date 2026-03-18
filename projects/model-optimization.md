@@ -3,7 +3,7 @@ layout: project
 title: "Model Optimization"
 date_range: "Dec. 6, 2024 - Present"
 status: "In Progress"
-permalink: /projects/model-optimization
+permalink: /archive/model-optimization
 ---
 
 <div class="row">

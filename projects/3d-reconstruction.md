@@ -3,7 +3,7 @@ layout: project
 title: "Feedforward 3D Reconstruction"
 date_range: "Nov. 2024 - Present"
 status: "In Progress"
-permalink: /projects/3d-reconstruction
+permalink: /archive/3d-reconstruction
 ---
 
 <div class="row">

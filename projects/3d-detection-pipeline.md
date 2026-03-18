@@ -3,7 +3,7 @@ layout: project
 title: "3D Object Detection Pipeline"
 date_range: "Aug. 16 - Dec. 12, 2024"
 status: "Completed"
-permalink: /projects/3d-detection-pipeline
+permalink: /archive/3d-detection-pipeline
 ---
 
 <div class="row">
