@@ -96,6 +96,46 @@
 </div>
 {% endif %}
 
+{% if site.data.profile.projects %}
+<div class="row mt-3">
+    <div class="col">
+        <div class="card border-0 shadow-sm bg-white">
+            <div class="card-body p-4">
+                <h5 class="mb-3"><strong>Projects</strong></h5>
+                <div style="max-height: 420px; overflow-y: auto; padding-right: 8px;">
+                    {% assign sorted_projects = site.data.profile.projects | sort: "sort_date" | reverse %}
+                    {% for item in sorted_projects %}
+                    <div class="mb-3 p-3" style="border-left: 3px solid #5dade2; background: rgba(93,173,226,0.05); border-radius: 0 8px 8px 0;">
+                        <div class="d-flex align-items-start justify-content-between">
+                            <div style="flex: 1;">
+                                <div style="font-weight: 600; font-size: 0.95rem;">
+                                    {% if item.link %}
+                                    <a href="{{ item.link }}" style="color: #5dade2; text-decoration: none;">{{ item.title }}</a>
+                                    {% else %}{{ item.title }}{% endif %}
+                                </div>
+                                <div class="small mt-1" style="color: var(--text-secondary);">{{ item.description }}</div>
+                                <div class="mt-2">
+                                    {% for tag in item.tags %}
+                                    <span class="badge badge-secondary mr-1" style="font-size: 0.7rem; background: rgba(93,173,226,0.2); color: #5dade2;">{{ tag }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="ml-3 text-right" style="flex-shrink: 0;">
+                                <div class="small text-muted">{{ item.date }}</div>
+                                {% if item.status %}
+                                <span class="badge mt-1 badge-{% if item.status == 'Completed' %}success{% elsif item.status == 'Submitted' %}warning{% else %}primary{% endif %}" style="font-size: 0.7rem;">{{ item.status }}</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
 {% if site.data.profile.skills %}
 <div class="row mt-3">
     <div class="col">
