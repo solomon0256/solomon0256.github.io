@@ -100,6 +100,13 @@ recent_work:
       link: "/archive/3d-reconstruction"
 
 projects:
+- title: "DE-FastPoly: Doppler-Enhanced 3D Multi-Object Tracking"
+  description: "Proposed Doppler velocity initialization (C) and Doppler-aware association (D) for 4D radar MOT. MOTA +3.9% on VoD, IDS -8.5% on nuScenes. Submitted to ISIE 2026."
+  date: "Jan. 2026 - Mar. 2026"
+  sort_date: 2026-01-01
+  status: "Submitted"
+  tags: ["4D Radar", "MOT", "Doppler", "Kalman Filter", "ISIE 2026"]
+  link: "/archive/de-fastpoly"
 - title: "HDX: 4D Radar Perception for Construction Sites"
   description: "Developed LiDAR 3D detection, radar ground mapping, velocity/distance analysis, and GUI visualization system for HDX excavator monitoring platform."
   date: "Sep. 2025 - Present"
