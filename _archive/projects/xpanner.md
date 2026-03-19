@@ -15,7 +15,13 @@ cover: /assets/images/archive/xpanner_arizona.jpg
 <div class="mb-3">
     <span class="badge badge-primary" style="font-size: 0.75rem;">In Progress</span>
     <a href="/assets/papers/Xpanner_work1.pptx" target="_blank" class="btn btn-sm btn-outline-primary ml-2">
-        <i class="fas fa-file-powerpoint mr-1"></i> Presentation (PPTX)
+        <i class="fas fa-file-powerpoint mr-1"></i> Presentation 1
+    </a>
+    <a href="/assets/papers/Xpanner_weeklyreport4.pptx" target="_blank" class="btn btn-sm btn-outline-primary ml-2">
+        <i class="fas fa-file-powerpoint mr-1"></i> Weekly Report 4
+    </a>
+    <a href="/assets/papers/Camera_Assisted_Radar_Clustering.pdf" target="_blank" class="btn btn-sm btn-outline-secondary ml-2">
+        <i class="fas fa-file-pdf mr-1"></i> Ref: Camera-Assisted Radar Clustering
     </a>
 </div>
 
@@ -55,6 +61,18 @@ The construction site environment presents low visibility (dust, weather), sever
 ## Motivation
 
 Solar power plant construction involves heavy machinery operating alongside workers and scattered materials in open, unstructured environments. Low visibility due to dust, severe vibration from excavation vehicles, and dynamic obstacles make reliable perception critical for both safety and automation. A robust detection system must work under these harsh conditions — motivating the use of 4D radar (weather/dust-robust, provides Doppler velocity) combined with camera for accurate object classification and localization.
+
+---
+
+## 2D Detection Results
+
+<div class="row mb-3">
+    <div class="col-md-4 p-1"><img src="/assets/images/archive/xpanner_2d_result1.png" class="w-100 rounded shadow-sm" alt="2D detection result 1"></div>
+    <div class="col-md-4 p-1"><img src="/assets/images/archive/xpanner_2d_result2.png" class="w-100 rounded shadow-sm" alt="2D detection result 2"></div>
+    <div class="col-md-4 p-1"><img src="/assets/images/archive/xpanner_2d_result3.png" class="w-100 rounded shadow-sm" alt="2D detection result 3"></div>
+</div>
+
+*YOLO 2D detection on Xpanner construction site data: detecting support pillars, workers, and construction materials.*
 
 ---
 

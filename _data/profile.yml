@@ -64,6 +64,30 @@ recent_work:
     sort_date: 2025-09-01
     project: ""
 
+  - title: "Received Xpanner raw ROS data (4D radar, LiDAR, camera)"
+    description: ""
+    date: "Dec. 2025 - Jan. 2026"
+    sort_date: 2025-12-15
+    project: "Xpanner"
+
+  - title: "Reviewed Xpanner data and created 2D annotations"
+    description: ""
+    date: "Feb. 4, 2026"
+    sort_date: 2026-02-04
+    project: "Xpanner"
+
+  - title: "Completed YOLO 2D detection model; achieved full 2D functionality (detection + recognition)"
+    description: ""
+    date: "Feb. 5 - 6, 2026"
+    sort_date: 2026-02-06
+    project: "Xpanner"
+
+  - title: "Implemented velocity clustering on top of camera-assisted radar clustering pipeline (ref. paper)"
+    description: ""
+    date: "Feb. 8, 2026"
+    sort_date: 2026-02-08
+    project: "Xpanner"
+
   - title: "Defined research objective: exploit 4D radar attributes to reduce detection noise"
     description: ""
     date: "Feb. 10, 2026"
