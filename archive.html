@@ -5,28 +5,89 @@ navbar_title: Archive
 container_class: container-xl
 ---
 
-{% assign cards_by_group = site.archive | sort: "date" | reverse | where: "show", true | group_by_exp: "item", "item.group" %}
-
-{% for group in cards_by_group %}
-<h1>{{ group.name }}</h1>
-<div class="row grid mb-4">
-    <div class="grid-sizer col-1"></div>
-    {% for item in group.items %}
-    {% if item.width >= 6 -%}
-        {%- assign width_sm = 12 -%}
-        {%- assign width_xs = 12 -%}
-    {%- elsif item.width >= 2 -%}
-        {%- assign width_sm = 6 -%}
-        {%- assign width_xs = 6 -%}
-    {%- else -%}
-        {%- assign width_sm = item.width | times: 2 | at_most: 12 -%}
-        {%- assign width_xs = item.width | times: 2 | at_most: 12 -%}
-    {%- endif -%}
-    <div class="p-2 grid-item col-md-{{ item.width | at_most: 12 }} col-sm-{{ width_sm }} col-{{ width_xs }}">
-        <div class="{% if item.class != null %}{{ item.class }}{% else %}card border-0 shadow-sm bg-white{% endif %}">
-            {{ item.content }}
+<div class="row mt-3">
+    <div class="col">
+        <div class="card border-0 shadow-sm bg-white">
+            <div class="card-body p-4">
+                <h4 class="mb-2"><i class="fas fa-archive mr-2"></i>Research Archive</h4>
+                <p class="text-muted small">A chronological archive of research projects and work logs since <strong>August 2025</strong>.</p>
+            </div>
         </div>
     </div>
-    {% endfor %}
 </div>
-{% endfor %}
+
+<!-- Projects Section -->
+<div class="row mt-3">
+    <div class="col">
+        <div class="card border-0 shadow-sm bg-white">
+            <div class="card-body p-4">
+                <h5 class="mb-3"><strong><i class="fas fa-project-diagram mr-2"></i>Projects</strong></h5>
+                {% assign projects = site.archive | where: "group", "Projects" | sort: "date" | reverse %}
+                {% for item in projects %}
+                <a href="{{ item.url | relative_url }}" style="text-decoration: none; color: inherit;">
+                    <div class="mb-3 p-3" style="border-left: 3px solid #5dade2; background: rgba(93,173,226,0.05); border-radius: 0 8px 8px 0; transition: background 0.2s;" onmouseover="this.style.background='rgba(93,173,226,0.12)'" onmouseout="this.style.background='rgba(93,173,226,0.05)'">
+                        <div class="d-flex align-items-start justify-content-between">
+                            <div style="flex: 1;">
+                                <div style="font-weight: 700; font-size: 0.95rem; color: #5dade2;">
+                                    {{ item.title }}
+                                </div>
+                                <div class="small mt-1 text-muted">{{ item.date_range }}</div>
+                                <div class="mt-1">
+                                    {% for tag in item.tags %}
+                                    <span class="badge mr-1" style="font-size: 0.65rem; background: rgba(93,173,226,0.15); color: #5dade2;">{{ tag }}</span>
+                                    {% endfor %}
+                                    {% if item.parent and item.parent != "" %}
+                                    <span class="badge ml-1" style="font-size: 0.65rem; background: rgba(255,193,7,0.15); color: #ffc107; border: 1px solid rgba(255,193,7,0.3);">
+                                        <i class="fas fa-sitemap mr-1"></i>Part of: {{ item.parent }}
+                                    </span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="ml-3 text-right" style="flex-shrink: 0;">
+                                {% if item.status %}
+                                <span class="badge badge-{% if item.status == 'Completed' %}success{% elsif item.status == 'Submitted' %}warning{% else %}primary{% endif %}" style="font-size: 0.65rem;">{{ item.status }}</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Recent Work Section -->
+{% if site.data.profile.recent_work %}
+<div class="row mt-3">
+    <div class="col">
+        <div class="card border-0 shadow-sm bg-white">
+            <div class="card-body p-4">
+                <h5 class="mb-3"><strong><i class="fas fa-clock mr-2"></i>Recent Work</strong></h5>
+                {% assign rw_items = site.data.profile.recent_work.items | sort: "sort_date" | reverse %}
+                {% for item in rw_items %}
+                <div class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-circle mr-2" style="color: #5dade2; font-size: 6px; margin-top: 6px; flex-shrink: 0;"></i>
+                    <div style="flex: 1;">
+                        <div class="d-flex align-items-start justify-content-between">
+                            <div style="font-weight: 600; font-size: 0.9rem;">
+                                {% if item.link %}<a href="{{ item.link }}" style="color: #5dade2; text-decoration: none;">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}
+                            </div>
+                            <div class="ml-2 small text-muted" style="flex-shrink: 0;"><em>{{ item.date }}</em></div>
+                        </div>
+                        {% if item.description and item.description != "" %}
+                        <div class="small text-muted mt-1">{{ item.description }}</div>
+                        {% endif %}
+                        {% if item.project and item.project != "" %}
+                        <span class="badge mt-1" style="font-size: 0.68rem; background: rgba(93,173,226,0.15); color: #5dade2; border: 1px solid rgba(93,173,226,0.3);">
+                            <i class="fas fa-tag mr-1"></i>{{ item.project }}
+                        </span>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
