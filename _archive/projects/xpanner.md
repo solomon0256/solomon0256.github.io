@@ -64,15 +64,13 @@ Solar power plant construction involves heavy machinery operating alongside work
 
 ---
 
-## 2D Detection Results
+## Images
 
 <div class="row mb-3">
-    <div class="col-md-4 p-1"><img src="/assets/images/archive/xpanner_2d_result1.png" class="w-100 rounded shadow-sm" alt="2D detection result 1"></div>
-    <div class="col-md-4 p-1"><img src="/assets/images/archive/xpanner_2d_result2.png" class="w-100 rounded shadow-sm" alt="2D detection result 2"></div>
-    <div class="col-md-4 p-1"><img src="/assets/images/archive/xpanner_2d_result3.png" class="w-100 rounded shadow-sm" alt="2D detection result 3"></div>
+    <div class="col-md-4 p-1"><img src="/assets/images/archive/xpanner_2d_result1.png" class="w-100 rounded shadow-sm"></div>
+    <div class="col-md-4 p-1"><img src="/assets/images/archive/xpanner_2d_result2.png" class="w-100 rounded shadow-sm"></div>
+    <div class="col-md-4 p-1"><img src="/assets/images/archive/xpanner_2d_result3.png" class="w-100 rounded shadow-sm"></div>
 </div>
-
-*YOLO 2D detection on Xpanner construction site data: detecting support pillars, workers, and construction materials.*
 
 ---
 

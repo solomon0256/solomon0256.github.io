@@ -88,6 +88,18 @@ recent_work:
     sort_date: 2026-02-08
     project: "Xpanner"
 
+  - title: "Discussed with team; identified instability in radar clustering — decided to explore MOT for stabilization"
+    description: ""
+    date: "Feb. 9, 2026"
+    sort_date: 2026-02-09
+    project: "Xpanner"
+
+  - title: "Started MOT implementation for radar-based tracking stabilization"
+    description: ""
+    date: "Feb. 10, 2026"
+    sort_date: 2026-02-10
+    project: "Xpanner"
+
   - title: "Defined research objective: exploit 4D radar attributes to reduce detection noise"
     description: ""
     date: "Feb. 10, 2026"
