@@ -35,7 +35,7 @@ Four-dimensional (4D) imaging radar provides radial velocity (Doppler), radar cr
 
 ## Motivation
 
-*To be written — why this work exists within the [Xpanner](/archive/xpanner) project context.*
+The [Xpanner](/archive/xpanner) project is an automated construction platform for solar power plant sites. The operating environment — active construction zones — presents harsh sensing conditions: heavy dust, dynamic obstacles, and severe mechanical vibration from the excavation vehicle itself. Even with a deployed 4D radar detection model, the raw detections suffer from significant noise: bounding box drift, frequent missed detections, and false positives. To obtain stable object information for downstream safety and control applications, a lightweight tracking module is essential to (1) smooth detection noise, (2) compensate for intermittent missed detections, and (3) maintain consistent object identities across frames. This need motivated our investigation into exploiting the Doppler velocity unique to 4D radar for enhancing existing trackers, resulting in DE-FastPoly.
 
 ---
 
