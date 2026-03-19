@@ -1,6 +1,6 @@
 ---
 show: true
-width: 12
+width: 6
 date: 2025-09-01 00:00:00 +0900
 group: Projects
 layout: project
@@ -9,6 +9,7 @@ date_range: "Sep. 2025 - Present"
 status: "In Progress"
 permalink: /archive/hdx
 tags: ["4D Radar", "LiDAR", "3D Detection", "GUI", "ROS2"]
+cover: /assets/images/archive/hdx_cover.jpg
 ---
 
 ## Background

@@ -5,65 +5,52 @@ navbar_title: Archive
 container_class: container-xl
 ---
 
-<div class="row mt-3">
-    <div class="col">
-        <div class="card border-0 shadow-sm bg-white">
-            <div class="card-body p-4">
-                <h4 class="mb-2"><i class="fas fa-archive mr-2"></i>Research Archive</h4>
-                <p class="text-muted small">A chronological archive of research projects and work logs since <strong>August 2025</strong>.</p>
+<h2 class="mt-3 mb-1"><i class="fas fa-archive mr-2"></i>Research Archive</h2>
+<p class="text-muted small mb-4">Since <strong>August 2025</strong></p>
+
+{% assign projects = site.archive | where: "group", "Projects" | where: "show", true | sort: "date" | reverse %}
+
+<div class="row">
+{% for item in projects %}
+<div class="col-md-6 col-12 p-2">
+    <a href="{{ item.url | relative_url }}" style="text-decoration: none; color: inherit;">
+        <div class="card border-0 shadow-sm bg-white" style="overflow: hidden; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+            <!-- Cover image -->
+            <div style="height: 180px; background: {% if item.cover %}url('{{ item.cover | relative_url }}') center/cover{% else %}linear-gradient(135deg, #1a2a3a, #2c3e50){% endif %}; position: relative;">
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 15px 20px; background: linear-gradient(transparent, rgba(0,0,0,0.7));">
+                    <h5 style="color: white; margin: 0; font-weight: 700;">{{ item.title }}</h5>
+                </div>
+                {% if item.status %}
+                <span class="badge" style="position: absolute; top: 12px; right: 12px; font-size: 0.7rem; background: {% if item.status == 'Completed' %}#28a745{% elsif item.status == 'Submitted' %}#ffc107; color: #000{% else %}#007bff{% endif %}; color: {% if item.status == 'Submitted' %}#000{% else %}#fff{% endif %};">{{ item.status }}</span>
+                {% endif %}
+            </div>
+            <!-- Card body -->
+            <div class="card-body p-3">
+                <div class="small text-muted mb-2"><i class="fas fa-calendar-alt mr-1"></i>{{ item.date_range }}</div>
+                <div>
+                    {% for tag in item.tags %}
+                    <span class="badge mr-1 mb-1" style="font-size: 0.65rem; background: rgba(93,173,226,0.15); color: #5dade2;">{{ tag }}</span>
+                    {% endfor %}
+                    {% if item.parent and item.parent != "" %}
+                    <span class="badge ml-1 mb-1" style="font-size: 0.65rem; background: rgba(255,193,7,0.15); color: #ffc107; border: 1px solid rgba(255,193,7,0.3);">
+                        <i class="fas fa-sitemap mr-1"></i>{{ item.parent }}
+                    </span>
+                    {% endif %}
+                </div>
             </div>
         </div>
-    </div>
+    </a>
+</div>
+{% endfor %}
 </div>
 
-<!-- Projects Section -->
-<div class="row mt-3">
-    <div class="col">
-        <div class="card border-0 shadow-sm bg-white">
-            <div class="card-body p-4">
-                <h5 class="mb-3"><strong><i class="fas fa-project-diagram mr-2"></i>Projects</strong></h5>
-                {% assign projects = site.archive | where: "group", "Projects" | sort: "date" | reverse %}
-                {% for item in projects %}
-                <a href="{{ item.url | relative_url }}" style="text-decoration: none; color: inherit;">
-                    <div class="mb-3 p-3" style="border-left: 3px solid #5dade2; background: rgba(93,173,226,0.05); border-radius: 0 8px 8px 0; transition: background 0.2s;" onmouseover="this.style.background='rgba(93,173,226,0.12)'" onmouseout="this.style.background='rgba(93,173,226,0.05)'">
-                        <div class="d-flex align-items-start justify-content-between">
-                            <div style="flex: 1;">
-                                <div style="font-weight: 700; font-size: 0.95rem; color: #5dade2;">
-                                    {{ item.title }}
-                                </div>
-                                <div class="small mt-1 text-muted">{{ item.date_range }}</div>
-                                <div class="mt-1">
-                                    {% for tag in item.tags %}
-                                    <span class="badge mr-1" style="font-size: 0.65rem; background: rgba(93,173,226,0.15); color: #5dade2;">{{ tag }}</span>
-                                    {% endfor %}
-                                    {% if item.parent and item.parent != "" %}
-                                    <span class="badge ml-1" style="font-size: 0.65rem; background: rgba(255,193,7,0.15); color: #ffc107; border: 1px solid rgba(255,193,7,0.3);">
-                                        <i class="fas fa-sitemap mr-1"></i>Part of: {{ item.parent }}
-                                    </span>
-                                    {% endif %}
-                                </div>
-                            </div>
-                            <div class="ml-3 text-right" style="flex-shrink: 0;">
-                                {% if item.status %}
-                                <span class="badge badge-{% if item.status == 'Completed' %}success{% elsif item.status == 'Submitted' %}warning{% else %}primary{% endif %}" style="font-size: 0.65rem;">{{ item.status }}</span>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Recent Work Section -->
+<!-- Recent Work -->
 {% if site.data.profile.recent_work %}
-<div class="row mt-3">
+<h2 class="mt-4 mb-3"><i class="fas fa-clock mr-2"></i>Recent Work</h2>
+<div class="row">
     <div class="col">
         <div class="card border-0 shadow-sm bg-white">
             <div class="card-body p-4">
-                <h5 class="mb-3"><strong><i class="fas fa-clock mr-2"></i>Recent Work</strong></h5>
                 {% assign rw_items = site.data.profile.recent_work.items | sort: "sort_date" | reverse %}
                 {% for item in rw_items %}
                 <div class="mb-3 d-flex align-items-start">

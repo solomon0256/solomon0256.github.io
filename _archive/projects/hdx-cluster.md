@@ -1,6 +1,6 @@
 ---
 show: true
-width: 12
+width: 6
 date: 2025-09-01 00:00:00 +0900
 group: Projects
 layout: project
@@ -8,8 +8,9 @@ title: "Cluster Detection for Construction Sites"
 date_range: "Sep. 2025 - Present"
 status: "In Progress"
 permalink: /archive/hdx-cluster
-tags: ["Clustering", "4D Radar", "Point Cloud", "DDCFusion"]
+tags: ["Clustering", "4D Radar", "DDCFusion", "Point Cloud"]
 parent: "HDX"
+cover: /assets/images/archive/cluster_cover.jpg
 ---
 
 ## Background
@@ -27,7 +28,6 @@ In construction site environments, accurate 3D object detection from sparse rada
 
 **Method**: DDCFusion — Radar & camera estimate 3D bounding boxes with LiDAR annotations as Ground Truth
 **Sensors**: 4D Radar + Camera (LiDAR for annotation only)
-**Training**: Iterative loss minimization
 **Framework**: Python, PyTorch
 
 ## Links

@@ -1,6 +1,6 @@
 ---
 show: true
-width: 12
+width: 6
 date: 2024-11-01 00:00:00 +0900
 group: Projects
 layout: project
@@ -9,6 +9,7 @@ date_range: "Nov. 2024 - Present"
 status: "In Progress"
 permalink: /archive/dust3r-lightweight
 tags: ["3D Reconstruction", "Knowledge Distillation", "Model Compression"]
+cover: /assets/images/archive/dust3r_cover.jpg
 ---
 
 ## Background
