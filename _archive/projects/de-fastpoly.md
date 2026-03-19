@@ -58,17 +58,20 @@ The [Xpanner](/archive/xpanner) project is an automated construction platform fo
 
 ---
 
-## Citation
+## Timeline
 
-<pre style="font-size: 0.8rem; background: rgba(0,0,0,0.05); padding: 12px; border-radius: 6px; overflow-x: auto;">
-@inproceedings{wen2026defastpoly,
-  title     = {Doppler-Enhanced Learning-Free Multi-Object Tracking using 4D Radar},
-  author    = {Wen, Yuhe and Jung, Jaeho and Gan, Quan and Choi, Jehwan and Nguyen, Duy-Linh and Vo, Xuan-Thuy and Jo, Kang-Hyun},
-  booktitle = {IEEE International Symposium on Industrial Electronics (ISIE)},
-  year      = {2026},
-  note      = {Submitted}
-}
-</pre>
+{% assign rw_items = site.data.profile.recent_work.items | where: "project", "DE-FastPoly" | sort: "sort_date" %}
+{% for item in rw_items %}
+<div class="mb-2 d-flex align-items-start">
+    <i class="fas fa-circle mr-2" style="color: #5dade2; font-size: 6px; margin-top: 8px; flex-shrink: 0;"></i>
+    <div style="flex: 1;">
+        <div class="d-flex align-items-start justify-content-between">
+            <div style="font-weight: 600; font-size: 0.9rem;">{{ item.title }}</div>
+            <div class="ml-2 small text-muted" style="flex-shrink: 0;"><em>{{ item.date }}</em></div>
+        </div>
+    </div>
+</div>
+{% endfor %}
 
 ---
 
