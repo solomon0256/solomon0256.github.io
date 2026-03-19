@@ -7,8 +7,8 @@ layout: project
 title: "Camera-Assisted Radar Clustering with Velocity Extension"
 date_range: "Feb. 2026 - Present"
 status: "In Progress"
-permalink: /archive/hdx-cluster
-tags: ["4D Radar", "Camera", "Clustering", "Velocity", "Point Cloud"]
+permalink: /archive/cluster-detection
+tags: ["4D Radar", "Camera", "DBSCAN", "Doppler Velocity", "ROS2", "YOLO"]
 parent: "Xpanner"
 cover: /assets/images/archive/cluster_cover.jpg
 ---
@@ -16,6 +16,9 @@ cover: /assets/images/archive/cluster_cover.jpg
 <div class="mb-3">
     <a href="/assets/papers/Camera_Assisted_Radar_Clustering.pdf" target="_blank" class="btn btn-sm btn-outline-primary mr-2">
         <i class="fas fa-file-pdf mr-1"></i> Reference Paper (PDF)
+    </a>
+    <a href="/assets/papers/Xpanner_weeklyreport4.pptx" target="_blank" class="btn btn-sm btn-outline-secondary mr-2">
+        <i class="fas fa-file-powerpoint mr-1"></i> Weekly Report (PPTX)
     </a>
 </div>
 
@@ -25,27 +28,61 @@ cover: /assets/images/archive/cluster_cover.jpg
 
 ## Overview
 
-This sub-project reproduces and extends the pipeline from the reference paper *"Camera-Assisted Radar Detection Clustering for Extended Target Tracking"*. The original pipeline uses camera detections to assist radar point cloud clustering for 3D object detection. Our contribution is adding **velocity-based clustering** on top of this pipeline, leveraging the Doppler velocity from 4D radar to improve cluster separation.
+Reproduces and extends the pipeline from *"Camera-Assisted Radar Detection Clustering for Extended Target Tracking"*. The original pipeline uses camera 2D detections to guide radar point cloud clustering for 3D object detection. Our contribution adds **velocity-based clustering** and **Kalman Filter + Doppler fusion** on top of this pipeline.
 
 ---
 
 ## Motivation
 
-In the [Xpanner](/archive/xpanner) construction site environment, raw 4D radar point clouds are sparse and noisy. Simple spatial clustering often merges nearby objects or splits a single object into fragments. By incorporating camera-assisted region proposals and Doppler velocity consistency, we achieve more stable and accurate clustering — providing better 3D bounding box inputs for the downstream tracking module.
+In the [Xpanner](/archive/xpanner) construction site, raw 4D radar point clouds are sparse and noisy. Simple spatial clustering often merges nearby objects or splits single objects into fragments. By incorporating camera-assisted region proposals, Doppler velocity consistency, and Kalman-based state estimation, we achieve stable and accurate 3D object localization for the downstream tracking and mapping modules.
+
+---
+
+## System Architecture
+
+### Sensors
+- **OAK-D Camera**: RGB image for 2D detection
+- **Bosch 4D Radar**: PointCloud2 with Doppler velocity, RCS, SNR
+- **Docker + ROS2 Humble**: Containerized deployment on Jetson Orin Nano
+
+### Detection Classes
+
+| Class | ID | 3D Size (m) |
+|-------|----|-------------|
+| vertical_pile | 0 | 0.5 x 0.5 x 1.5 |
+| horizontal_pile | 1 | 3.5 x 0.5 x 0.5 |
+| machine | 2 | 2.5 x 2.5 x 5.0 |
+| worker | 3 | 1.2 x 1.2 x 2.2 |
 
 ---
 
 ## Approach
 
-**Base pipeline (from reference paper):**
-- Camera 2D detections define regions of interest
-- Radar points within each region are clustered
-- 3D bounding boxes are estimated from clustered radar points
+### Base Pipeline (Reference Paper)
+- Camera 2D detections (YOLOv8) define regions of interest
+- Radar points are projected into image and matched to 2D bounding boxes
+- Spatial DBSCAN clusters radar points within each region
 
-**Our extension:**
-- Added velocity-based clustering using Doppler v_r from 4D radar
-- Points with similar spatial location AND similar radial velocity are grouped together
-- Improves separation of objects moving at different speeds in close proximity
+### Our Extension: 2-Stage Clustering
+
+**Stage 1: Feature-based DBSCAN**
+- Uses radial velocity, RCS, SNR as features
+- Chebyshev distance metric
+- Groups radar points from the same physical object
+
+**Stage 2: Spatial DBSCAN**
+- 3D Euclidean distance
+- Range-adaptive eps (farther objects → larger eps)
+- Class-specific parameters tuned to physical object sizes
+
+### Kalman Filter + Doppler Fusion
+
+- **State**: `[x, y, vx, vy]` (position + velocity)
+- **Predict**: constant-velocity model
+- **Update**: Doppler velocity decomposed into radial/tangential components
+  - Radial: 80% Doppler + 20% Kalman
+  - Tangential: Kalman only
+- **Jump protection**: rejects measurements >1.5m from predicted position
 
 ---
 

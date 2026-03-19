@@ -207,14 +207,14 @@ projects:
   link: "/archive/de-fastpoly"
   parent: "xpanner"
 
-- id: "hdx-cluster"
+- id: "cluster-detection"
   title: "Camera-Assisted Radar Clustering with Velocity Extension"
-  description: "Reproduced camera-assisted radar clustering pipeline and extended with Doppler velocity-based clustering for improved 3D detection."
+  description: "2-stage DBSCAN clustering with Doppler velocity fusion and Kalman filter for 3D object detection on construction sites."
   date: "Feb. 2026 - Present"
   sort_date: 2026-02-06
   status: "In Progress"
-  tags: ["4D Radar", "Camera", "Clustering", "Velocity"]
-  link: "/archive/hdx-cluster"
+  tags: ["4D Radar", "Camera", "DBSCAN", "Doppler", "ROS2", "YOLO"]
+  link: "/archive/cluster-detection"
   parent: "xpanner"
 
 skills:
