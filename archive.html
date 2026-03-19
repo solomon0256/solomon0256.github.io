@@ -44,6 +44,21 @@ container_class: container-xl
 {% endfor %}
 </div>
 
+<!-- Images / Gallery -->
+{% assign images = site.archive | where: "group", "Images" | where: "show", true | sort: "date" | reverse %}
+{% if images.size > 0 %}
+<h2 class="mt-4 mb-3"><i class="fas fa-images mr-2"></i>Images</h2>
+<div class="row">
+{% for item in images %}
+<div class="col-md-{{ item.width | default: 4 }} col-sm-6 col-12 p-2">
+    <div class="card border-0 shadow-sm bg-white" style="overflow: hidden;">
+        {{ item.content }}
+    </div>
+</div>
+{% endfor %}
+</div>
+{% endif %}
+
 <!-- Recent Work -->
 {% if site.data.profile.recent_work %}
 <h2 class="mt-4 mb-3"><i class="fas fa-clock mr-2"></i>Recent Work</h2>
