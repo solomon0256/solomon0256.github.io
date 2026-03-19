@@ -17,6 +17,9 @@ cover: /assets/images/archive/de-fastpoly_cover.jpg
     <a href="/assets/papers/DE-FastPoly_ISIE2026.pdf" target="_blank" class="btn btn-sm btn-outline-primary mr-2">
         <i class="fas fa-file-pdf mr-1"></i> Paper (PDF)
     </a>
+    <a href="https://github.com/solomon0256/DE-FastPoly" target="_blank" class="btn btn-sm btn-outline-dark mr-2">
+        <i class="fab fa-github mr-1"></i> Code
+    </a>
 </div>
 
 **Yuhe Wen**, Jaeho Jung, Quan Gan, Jehwan Choi, Duy-Linh Nguyen, Xuan-Thuy Vo, Kang-Hyun Jo
@@ -36,6 +39,28 @@ Four-dimensional (4D) imaging radar provides radial velocity (Doppler), radar cr
 ## Motivation
 
 The [Xpanner](/archive/xpanner) project is an automated construction platform for solar power plant sites. The operating environment — active construction zones — presents harsh sensing conditions: heavy dust, dynamic obstacles, and severe mechanical vibration from the excavation vehicle itself. Even with a deployed 4D radar detection model, the raw detections suffer from significant noise: bounding box drift, frequent missed detections, and false positives. To obtain stable object information for downstream safety and control applications, a lightweight tracking module is essential to (1) smooth detection noise, (2) compensate for intermittent missed detections, and (3) maintain consistent object identities across frames. This need motivated our investigation into exploiting the Doppler velocity unique to 4D radar for enhancing existing trackers, resulting in DE-FastPoly.
+
+---
+
+## Qualitative Results
+
+<img src="/assets/images/archive/de-fastpoly_fig4_qualitative.png" class="w-100 rounded shadow-sm mb-2" alt="Qualitative comparison on VoD">
+
+*Camera-view qualitative comparison on VoD (detector setting). Top: success case — baseline incurs an identity switch while DE-FastPoly maintains stable tracking. Bottom: failure case — both methods switch near frame 8377, showing that Doppler-aware association reduces but does not eliminate all failure modes.*
+
+---
+
+## Citation
+
+<pre style="font-size: 0.8rem; background: rgba(0,0,0,0.05); padding: 12px; border-radius: 6px; overflow-x: auto;">
+@inproceedings{wen2026defastpoly,
+  title     = {Doppler-Enhanced Learning-Free Multi-Object Tracking using 4D Radar},
+  author    = {Wen, Yuhe and Jung, Jaeho and Gan, Quan and Choi, Jehwan and Nguyen, Duy-Linh and Vo, Xuan-Thuy and Jo, Kang-Hyun},
+  booktitle = {IEEE International Symposium on Industrial Electronics (ISIE)},
+  year      = {2026},
+  note      = {Submitted}
+}
+</pre>
 
 ---
 
