@@ -42,6 +42,14 @@ The [Xpanner](/archive/xpanner) project is an automated construction platform fo
 
 ---
 
+## Main Results
+
+<img src="/assets/images/archive/de-fastpoly_vod_main.png" class="w-100 rounded shadow-sm mb-2" alt="VoD Main Comparison: MOTA, IDS, FPS">
+
+*VoD main comparison: DE-FastPoly achieves the highest MOTA (0.361) with the lowest IDS (127) while maintaining real-time speed (216.8 FPS).*
+
+---
+
 ## Qualitative Results
 
 <img src="/assets/images/archive/de-fastpoly_fig4_qualitative.png" class="w-100 rounded shadow-sm mb-2" alt="Qualitative comparison on VoD">
