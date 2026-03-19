@@ -9,20 +9,39 @@ date_range: "Sep. 2025 - Present"
 status: "In Progress"
 permalink: /archive/xpanner
 tags: ["4D Radar", "Camera", "3D Detection", "Edge Deployment", "ROS2"]
-cover: /assets/images/archive/xpanner_cover.jpg
+cover: /assets/images/archive/xpanner_arizona.jpg
 ---
 
 <div class="mb-3">
     <span class="badge badge-primary" style="font-size: 0.75rem;">In Progress</span>
+    <a href="/assets/papers/Xpanner_work1.pptx" target="_blank" class="btn btn-sm btn-outline-primary ml-2">
+        <i class="fas fa-file-powerpoint mr-1"></i> Presentation (PPTX)
+    </a>
 </div>
 
 **ISLab, University of Ulsan** — Advised by Prof. Kang-Hyun Jo
+
+**Funded by Xpanner Inc.** | Field data collected in **Arizona, USA**
 
 ---
 
 ## Overview
 
+<img src="/assets/images/archive/xpanner_arizona.jpg" class="w-100 rounded shadow-sm mb-3" alt="Xpanner project - Arizona field test">
+
 Xpanner is an automated construction platform for **solar power plant sites**. The goal is to build a real-time perception system that detects and localizes key objects on the construction site using **4D radar and camera** fusion, deployed on an **edge computing platform** mounted on the excavation vehicle.
+
+---
+
+## Approach
+
+The construction site environment presents low visibility (dust, weather), severe mechanical vibration, and dynamic obstacles. Our pipeline addresses these challenges in three stages:
+
+**1. Noise Reduction** — Radar and IMU-based algorithmic denoising at the signal level. Vibration from the excavation vehicle introduces significant noise into the raw radar point cloud. We apply filtering (Go-RIO, Uncertainty-Aware, Iterated Kalman Filter) to suppress vibration noise and calibrate asynchronous radar-IMU data before feeding to the detection model.
+
+**2. Detection** — 4D radar + camera fusion for 3D object detection. After denoising, the cleaned radar points and camera images are fed into the detection model to identify and locate targets on the construction site.
+
+**3. Mapping** — Localize all visible support pillars and build a site map for construction automation and path planning.
 
 ### Detection Targets
 
@@ -35,7 +54,7 @@ Xpanner is an automated construction platform for **solar power plant sites**. T
 
 ## Motivation
 
-Solar power plant construction involves heavy machinery operating alongside workers and scattered materials in open, unstructured environments. Dust, vibration, and dynamic obstacles make reliable perception critical for both safety and automation. A robust detection system must work under these harsh conditions — motivating the use of 4D radar (weather/dust-robust, provides Doppler velocity) combined with camera for accurate object classification and localization.
+Solar power plant construction involves heavy machinery operating alongside workers and scattered materials in open, unstructured environments. Low visibility due to dust, severe vibration from excavation vehicles, and dynamic obstacles make reliable perception critical for both safety and automation. A robust detection system must work under these harsh conditions — motivating the use of 4D radar (weather/dust-robust, provides Doppler velocity) combined with camera for accurate object classification and localization.
 
 ---
 
