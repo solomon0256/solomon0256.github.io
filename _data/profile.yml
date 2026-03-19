@@ -67,8 +67,26 @@ recent_work:
   - title: "Received Xpanner raw ROS data (4D radar, LiDAR, camera)"
     description: ""
     date: "Dec. 2025 - Jan. 2026"
-    sort_date: 2025-12-15
+    sort_date: 2025-12-01
     project: "Xpanner"
+
+  - title: "Reproduced reference pipeline: camera-assisted radar clustering (Zeng et al., IEEE TIM 2024)"
+    description: ""
+    date: "Dec. 10 - 15, 2025"
+    sort_date: 2025-12-10
+    project: "Cluster Detection"
+
+  - title: "Added Kalman Filter + Doppler fusion (80% Doppler / 20% Kalman radial) and jump protection (>1.5m outlier rejection)"
+    description: ""
+    date: "Dec. 15 - 22, 2025"
+    sort_date: 2025-12-15
+    project: "Cluster Detection"
+
+  - title: "Implemented frame accumulation (3-frame stacking) and Z-axis filtering for sparse radar points"
+    description: ""
+    date: "Dec. 17 - 22, 2025"
+    sort_date: 2025-12-17
+    project: "Cluster Detection"
 
   - title: "Reviewed Xpanner data and created 2D annotations"
     description: ""
@@ -86,7 +104,7 @@ recent_work:
     description: ""
     date: "Feb. 8, 2026"
     sort_date: 2026-02-08
-    project: "Xpanner"
+    project: "Cluster Detection"
 
   - title: "Discussed with team; identified instability in radar clustering — decided to explore MOT for stabilization"
     description: ""
