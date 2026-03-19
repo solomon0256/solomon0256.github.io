@@ -148,6 +148,12 @@ recent_work:
     sort_date: 2026-03-15
     project: "DE-FastPoly"
 
+  - title: "Completed DE-FastPoly paper; integrated MOT tracking module into Xpanner full detection pipeline"
+    description: ""
+    date: "Mar. 18, 2026"
+    sort_date: 2026-03-18
+    project: "Xpanner"
+
 projects:
 # ── Top-level projects ──────────────────────────────────────
 - id: "hdx"
