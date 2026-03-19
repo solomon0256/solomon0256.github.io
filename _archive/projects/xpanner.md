@@ -4,46 +4,63 @@ width: 6
 date: 2025-09-03 00:00:00 +0900
 group: Projects
 layout: project
-title: "Xpanner: Off-Road Perception & Mapping"
+title: "Xpanner: Perception System for Solar Power Plant Construction"
 date_range: "Sep. 2025 - Present"
 status: "In Progress"
 permalink: /archive/xpanner
-tags: ["SLAM", "Patchwork++", "YOLOv8", "RealSense", "Docker"]
+tags: ["4D Radar", "Camera", "3D Detection", "Edge Deployment", "ROS2"]
 cover: /assets/images/archive/xpanner_cover.jpg
 ---
 
-## Background
+<div class="mb-3">
+    <span class="badge badge-primary" style="font-size: 0.75rem;">In Progress</span>
+</div>
 
-Xpanner is an excavation vehicle platform requiring off-road perception capabilities including ground segmentation, 3D mapping, pothole/hole detection, and road surface analysis. The system operates in unstructured environments (construction sites, grasslands) where traditional approaches fail.
+**ISLab, University of Ulsan** — Advised by Prof. Kang-Hyun Jo
 
-## My Contributions
+---
 
-- **Ground Segmentation**: Achieved x2.0 performance improvement using Patchwork++ optimization
-- **LiDAR SLAM Pipeline**: x2.0 performance improvement for real-time mapping
-- **3D Ground Map Processing**: Processed 1.5 billion points down to 300M points with filtering pipeline
-- **Pothole/Hole Detection**: Evaluated YOLOv8 segmentation and BiSeNet for excavation hole detection with depth camera
-- **Depth Camera Integration**: Selected and integrated Intel RealSense D435i (built-in IMU, IR filter)
-- **Road Profile Estimation**: Implemented Unknown Input Kalman Filter (UIKF) for road surface estimation
-- **Docker Environment**: Created all-in-one Docker setup for 3D detection (ROS2 + GPU packages)
-- **Vibration Noise Filtering**: IMU-based vibration compensation for radar point clouds
+## Overview
 
-## Technical Details
+Xpanner is an automated construction platform for **solar power plant sites**. The goal is to build a real-time perception system that detects and localizes key objects on the construction site using **4D radar and camera** fusion, deployed on an **edge computing platform** mounted on the excavation vehicle.
 
-**Sensors**: LiDAR + 4D Radar + Intel RealSense D435i + IMU
-**Ground Segmentation**: Patchwork++, GroundLoc
-**Detection**: YOLOv8s, BiSeNet (custom-trained for excavation holes)
-**SLAM**: LiDAR SLAM with vibration noise filtering
-**Algorithms**: UIKF (Unknown Input Kalman Filter), Gaussian Process
-**Infrastructure**: Docker, ROS2, Python, C++
+### Detection Targets
 
-## Key Results
+- Support pillars (solar panel mounting structures)
+- Construction workers
+- Other construction machines
+- Construction materials to be installed
 
-| Metric | Improvement |
-|--------|-------------|
-| Ground Segmentation (Xpanner) | x2.0 |
-| LiDAR SLAM (Xpanner) | x2.0 |
-| 3D Map Points | 1.5B to 300M (filtered) |
+---
+
+## Motivation
+
+Solar power plant construction involves heavy machinery operating alongside workers and scattered materials in open, unstructured environments. Dust, vibration, and dynamic obstacles make reliable perception critical for both safety and automation. A robust detection system must work under these harsh conditions — motivating the use of 4D radar (weather/dust-robust, provides Doppler velocity) combined with camera for accurate object classification and localization.
+
+---
 
 ## Sub-projects
 
-- [DE-FastPoly: Doppler-Enhanced 3D MOT](/archive/de-fastpoly) — ISIE 2026 paper
+- [DE-FastPoly: Doppler-Enhanced 3D MOT](/archive/de-fastpoly) — ISIE 2026 paper on Doppler-enhanced tracking
+- [Cluster Detection](/archive/hdx-cluster) — Radar point cloud clustering for 3D object detection
+
+---
+
+## Timeline
+
+{% assign rw_items = site.data.profile.recent_work.items | where: "project", "Xpanner" | sort: "sort_date" %}
+{% if rw_items.size > 0 %}
+{% for item in rw_items %}
+<div class="mb-2 d-flex align-items-start">
+    <i class="fas fa-circle mr-2" style="color: #5dade2; font-size: 6px; margin-top: 8px; flex-shrink: 0;"></i>
+    <div style="flex: 1;">
+        <div class="d-flex align-items-start justify-content-between">
+            <div style="font-weight: 600; font-size: 0.9rem;">{{ item.title }}</div>
+            <div class="ml-2 small text-muted" style="flex-shrink: 0;"><em>{{ item.date }}</em></div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% else %}
+*Timeline entries coming soon.*
+{% endif %}
