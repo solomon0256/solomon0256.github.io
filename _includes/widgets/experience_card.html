@@ -104,26 +104,3 @@
 </div>
 {% endif %}
 
-{% if site.data.profile.skills %}
-<div class="row mt-3">
-    <div class="col">
-        <div class="card border-0 shadow-sm bg-white">
-            <div class="card-body p-4">
-                <h5 class="mb-4"><strong>Technical Skills</strong></h5>
-                <div class="row">
-                    {% for skill in site.data.profile.skills %}
-                    <div class="col-md-3 col-6 mb-3">
-                        <h6 style="color: #5dade2;">{{ skill.category }}</h6>
-                        <ul class="list-unstyled small">
-                            {% for item in skill.items %}
-                            <li>{{ item }}</li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-{% endif %}
