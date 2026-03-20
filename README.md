@@ -1,14 +1,12 @@
 # Yuhe Wen - Academic Homepage
 
-Personal academic website for PhD applications and research documentation.
+Personal academic website for daily record and documentation.
 
 **Live site**: [solomon0256.github.io](https://solomon0256.github.io)
 
-**Research areas**: 4D Radar Perception, Multi-Sensor Fusion, 3D Object Detection, Robotics
+**Research areas**: Detection, Robotics
 
-**Affiliation**: ISLab, University of Ulsan / Ludong University
-
-Recording since Aug. 2025.
+**Recording since**: Dec. 10, 2025
 
 ---
 
