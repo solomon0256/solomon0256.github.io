@@ -3,3 +3,5 @@ pages:
   url: /
 - name: Archive
   url: /archive
+- name: Interests
+  url: /interests
