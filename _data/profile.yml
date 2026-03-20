@@ -235,6 +235,23 @@ projects:
   link: "/archive/cluster-detection"
   parent: "xpanner"
 
+news:
+- date: "Mar. 2026"
+  text: "Submitted paper to ISIE 2026: DE-FastPoly — Doppler-Enhanced Multi-Object Tracking for 4D Radar."
+  sort_date: 2026-03-15
+- date: "Sep. 2025"
+  text: "Joined <a href='https://islab.ulsan.ac.kr/' target='_blank'>ISLab</a>, University of Ulsan, advised by Prof. Kang-Hyun Jo."
+  sort_date: 2025-09-01
+- date: "Mar. 2025"
+  text: "Enrolled at <a href='https://www.ulsan.ac.kr/' target='_blank'>University of Ulsan</a>, South Korea (Electrical Engineering)."
+  sort_date: 2025-03-01
+- date: "Aug. 2024"
+  text: "Joined Intelligent Vehicle Lab, Ludong University."
+  sort_date: 2024-08-01
+- date: "Sep. 2022"
+  text: "Enrolled at <a href='https://www.ldu.edu.cn/' target='_blank'>Ludong University</a>, China (Electrical Engineering and Automation)."
+  sort_date: 2022-09-01
+
 skills:
 - category: "Programming"
   items: [ "Python", "C/C++", "MATLAB" ]

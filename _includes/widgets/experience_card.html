@@ -2,7 +2,7 @@
     <div class="col">
         <div class="card border-0 shadow-sm bg-white">
             <div class="card-body p-4">
-                
+
                 {% if site.data.profile.education %}
                 <div>
                     <h5 class="mb-4"><strong>Education</strong></h5>
@@ -104,3 +104,21 @@
 </div>
 {% endif %}
 
+{% if site.data.profile.news %}
+<div class="row mt-3">
+    <div class="col">
+        <div class="card border-0 shadow-sm bg-white">
+            <div class="card-body p-4">
+                <h5 class="mb-3"><strong>News</strong></h5>
+                {% assign sorted_news = site.data.profile.news | sort: "sort_date" | reverse %}
+                {% for item in sorted_news %}
+                <div class="mb-2 d-flex align-items-start">
+                    <span class="mr-2" style="color: #5dade2; flex-shrink: 0;">[{{ item.date }}]</span>
+                    <span>{{ item.text }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
