@@ -60,8 +60,8 @@ recent_work:
   items:
   - title: "Recent Work Started"
     description: ""
-    date: "Sep. 2025"
-    sort_date: 2025-09-01
+    date: "Dec. 2025"
+    sort_date: 2025-12-01
     project: ""
 
   - title: "Received Xpanner raw ROS data (4D radar, LiDAR, camera)"
