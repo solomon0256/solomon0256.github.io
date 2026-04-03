@@ -70,6 +70,12 @@ recent_work:
     sort_date: 2026-03-19
     project: "DUSt3R"
 
+  - title: "Trained RCBEVDet on the VoD dataset for radar-camera 3D object detection"
+    description: ""
+    date: "Mar. 22 - 28, 2026"
+    sort_date: 2026-03-22
+    project: "Xpanner"
+
   - title: "Recent Work Started"
     description: ""
     date: "Dec. 2025"
