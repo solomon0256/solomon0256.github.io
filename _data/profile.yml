@@ -58,12 +58,17 @@ education:
 
 recent_work:
   items:
-  - title: "Continued DUSt3R lightweighting and knowledge distillation experiments"
-    description: "Focused on student model design, distillation strategy refinement, and lightweight 3D reconstruction optimization."
-    date: "Apr. 2026 - Present"
-    sort_date: 2026-04-01
+  - title: "Started first-round distillation"
+    description: ""
+    date: "Mar. 27 - Apr. 5, 2026"
+    sort_date: 2026-03-27
     project: "DUSt3R"
-    link: "/archive/dust3r-lightweight"
+
+  - title: "Prepared dataset and preprocessing for distillation"
+    description: ""
+    date: "Mar. 19 - 27, 2026"
+    sort_date: 2026-03-19
+    project: "DUSt3R"
 
   - title: "Recent Work Started"
     description: ""
