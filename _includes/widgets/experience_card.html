@@ -56,6 +56,11 @@
                                 <i class="fas fa-tag mr-1"></i>{{ item.project }}
                             </span>
                             {% endif %}
+                            {% if item.subproject and item.subproject != "" %}
+                            <span class="badge mt-1 ml-1" style="font-size: 0.68rem; background: rgba(40,167,69,0.12); color: #6fcf97; border: 1px solid rgba(111,207,151,0.28);">
+                                <i class="fas fa-diagram-project mr-1"></i>{{ item.subproject }}
+                            </span>
+                            {% endif %}
                         </div>
                     </div>
                     {% endfor %}

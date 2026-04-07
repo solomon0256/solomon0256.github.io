@@ -58,6 +58,13 @@ education:
 
 recent_work:
   items:
+  - title: "Integrated a tracking module into the HDX detection pipeline"
+    description: ""
+    date: "Apr. 4 - 7, 2026"
+    sort_date: 2026-04-04
+    project: "HDX"
+    subproject: "tracking"
+
   - title: "Started first-round distillation"
     description: ""
     date: "Mar. 27 - Apr. 5, 2026"
