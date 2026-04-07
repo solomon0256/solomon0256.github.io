@@ -41,4 +41,25 @@ The HDX project develops a comprehensive perception system for construction site
 
 ## Sub-projects
 
-- [Cluster Detection](/archive/hdx-cluster) — Radar point cloud clustering for 3D object detection
+- [Cluster Detection](/archive/hdx-cluster) - Radar point cloud clustering for 3D object detection
+
+---
+
+## Timeline
+
+{% assign rw_items = site.data.profile.recent_work.items | where: "project", "HDX" | sort: "sort_date" %}
+{% if rw_items.size > 0 %}
+{% for item in rw_items %}
+<div class="mb-2 d-flex align-items-start">
+    <i class="fas fa-circle mr-2" style="color: #5dade2; font-size: 6px; margin-top: 8px; flex-shrink: 0;"></i>
+    <div style="flex: 1;">
+        <div class="d-flex align-items-start justify-content-between">
+            <div style="font-weight: 600; font-size: 0.9rem;">{{ item.title }}</div>
+            <div class="ml-2 small text-muted" style="flex-shrink: 0;"><em>{{ item.date }}</em></div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% else %}
+*Timeline entries coming soon.*
+{% endif %}
